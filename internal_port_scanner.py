@@ -133,24 +133,3 @@ if __name__ == '__main__':
             for port, service in data:
                 print(f"\r{Fore.LIGHTMAGENTA_EX}[{Fore.LIGHTGREEN_EX}{Back.LIGHTBLUE_EX}ABIERTO{Back.RESET}{Fore.LIGHTMAGENTA_EX}]{Fore.LIGHTYELLOW_EX} {port} {Fore.LIGHTGREEN_EX}/{Fore.LIGHTYELLOW_EX}tcp {Fore.LIGHTGREEN_EX}->{Fore.LIGHTGREEN_EX} {service} {Fore.RESET}")
 
-    
-    """
-listaPuertos = list(range(20,130)) #La lista de puertos a escanear
-host = "192.168.1.1" #Aquí la IP que quieres escánear
-
-print("Escaneando los puertos de la IP:",host)
-for puerto in listaPuertos:
-    puertoOrigen = RandShort()
-    paquete = IP(dst = host)/TCP(sport = puertoOrigen, dport = puerto, flags = "S")
-    respuesta = sr1(paquete, timeout = 2)
-    if("NoneType" in str(type(respuesta))):
-        pass
-    elif(respuesta.haslayer(TCP) and respuesta.getlayer(TCP).flags == 0x12):
-        p = IP(dst = host)/TCP(sport = puertoOrigen, dport = puerto, flags = "R")
-        
-        rst = sr(p, timeout = 1)
-        try:
-            servicio = getservbyport(puerto)
-        except KeyboardInterrupt:
-            servicio = "¿?"
-        print("[ABIERTO]",puerto," ->",servicio)"""
